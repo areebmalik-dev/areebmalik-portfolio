@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { FloatingOrbs } from "@/components/floating-orbs";
 import "./globals.css";
 
 const inter = Inter({
@@ -120,6 +121,7 @@ export default function RootLayout({
       className={`${inter.variable} ${geistMono.variable} bg-background`}
     >
       <body className="font-sans antialiased min-h-screen bg-background text-foreground overflow-x-hidden">
+        <FloatingOrbs />
         {children}
 
         {process.env.NODE_ENV === "production" && <Analytics />}

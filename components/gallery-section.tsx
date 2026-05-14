@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { TiltCard } from "@/components/ui/tilt-card";
 
 const screenshots = [
   {
@@ -158,13 +159,9 @@ export function GallerySection() {
         </motion.div>
 
         {/* Main carousel */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="relative max-w-4xl mx-auto mb-8"
-        >
-          <div className="relative aspect-video glass-card rounded-2xl overflow-hidden border border-white/10">
+        <TiltCard degree={5} className="relative max-w-4xl mx-auto mb-8">
+        <div className="relative aspect-video glass-card rounded-2xl overflow-hidden border border-white/10">
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -254,7 +251,7 @@ export function GallerySection() {
               />
             ))}
           </div>
-        </motion.div>
+        </TiltCard>
 
         {/* Thumbnail strip */}
         <motion.div

@@ -10,6 +10,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { TiltCard } from "@/components/ui/tilt-card";
 
 const projectCategories = [
   "All",
@@ -239,10 +240,10 @@ export function WebProjectsSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                whileHover={{ y: -8 }}
                 className="group"
               >
-                <div className="h-full glass-card rounded-2xl overflow-hidden border border-transparent group-hover:border-primary/30 transition-all duration-500">
+                <TiltCard degree={10} className="h-full">
+                  <div className="h-full glass-card rounded-2xl overflow-hidden border border-transparent group-hover:border-primary/30 transition-all duration-500">
                   {/* Image area */}
                   <div
                     className={`relative h-48 bg-gradient-to-br ${project.gradient} overflow-hidden`}
@@ -327,8 +328,10 @@ export function WebProjectsSection() {
                       ))}
                     </div>
                   </div>
-                </div>
-              </motion.div>
+                  </div>
+                  </TiltCard>
+                  </motion.div>
+
             ))}
           </AnimatePresence>
         </motion.div>

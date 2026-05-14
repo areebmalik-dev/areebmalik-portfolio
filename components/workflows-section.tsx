@@ -4,6 +4,7 @@ import { useState, useRef } from "react"
 import { motion, AnimatePresence, useInView } from "framer-motion"
 import { ExternalLink, MessageSquare, Linkedin, FileSpreadsheet, Bot, Mail, Share2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { TiltCard } from "@/components/ui/tilt-card"
 
 const categories = ["All", "AI", "WhatsApp", "LinkedIn", "Google Sheets", "Email", "Social Media"]
 
@@ -136,10 +137,10 @@ export function WorkflowsSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                whileHover={{ y: -8 }}
                 className="group"
               >
-                <div className="h-full glass-card rounded-2xl overflow-hidden border border-transparent group-hover:border-primary/30 transition-all duration-500 relative">
+                <TiltCard degree={12} className="h-full">
+                  <div className="h-full glass-card rounded-2xl overflow-hidden border border-transparent group-hover:border-primary/30 transition-all duration-500 relative">
                   {/* Gradient border effect on hover */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/0 via-primary/50 to-secondary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm" />
                   
@@ -204,6 +205,7 @@ export function WorkflowsSection() {
                     </Button>
                   </div>
                 </div>
+                </TiltCard>
               </motion.div>
             ))}
           </AnimatePresence>

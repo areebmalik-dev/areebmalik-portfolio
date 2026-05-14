@@ -1,9 +1,11 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { ArrowRight, Play, Workflow, Clock, Cpu, Code2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { TiltCard } from "@/components/ui/tilt-card"
+import { useRef } from "react"
 
 const stats = [
   { icon: Workflow, value: "150+", label: "Workflows Built" },
@@ -23,27 +25,40 @@ function FloatingOrb({ className, delay = 0 }: { className?: string; delay?: num
   )
 }
 
-function FloatingCard({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+function FloatingCard({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.6 }}
-      className={`glass-card rounded-xl p-4 ${className}`}
-    >
-      <motion.div
-        animate={{ y: [0, -8, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      >
-        {children}
-      </motion.div>
-    </motion.div>
+    <TiltCard degree={20}>
+      <div className="glass-card rounded-xl p-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay, duration: 0.6 }}
+        >
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            {children}
+          </motion.div>
+        </motion.div>
+      </div>
+    </TiltCard>
   )
 }
 
 export function HeroSection() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  })
+
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -200])
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -150])
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, -100])
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Animated background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
       
@@ -58,26 +73,32 @@ export function HeroSection() {
 
       {/* Floating UI cards - decorative */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <FloatingCard className="absolute top-32 left-[10%] hidden lg:block" delay={0.8}>
-          <div className="flex items-center gap-2 text-sm">
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-muted-foreground">n8n Workflow Active</span>
-          </div>
-        </FloatingCard>
+        <motion.div style={{ y: y1 }} className="absolute top-32 left-[10%] hidden lg:block">
+          <FloatingCard delay={0.8}>
+            <div className="flex items-center gap-2 text-sm">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-muted-foreground">n8n Workflow Active</span>
+            </div>
+          </FloatingCard>
+        </motion.div>
         
-        <FloatingCard className="absolute top-48 right-[8%] hidden lg:block" delay={1}>
-          <div className="flex items-center gap-2 text-sm">
-            <Code2 className="h-4 w-4 text-primary" />
-            <span className="text-muted-foreground">Next.js App Deployed</span>
-          </div>
-        </FloatingCard>
+        <motion.div style={{ y: y2 }} className="absolute top-48 right-[8%] hidden lg:block">
+          <FloatingCard delay={1}>
+            <div className="flex items-center gap-2 text-sm">
+              <Code2 className="h-4 w-4 text-primary" />
+              <span className="text-muted-foreground">Next.js App Deployed</span>
+            </div>
+          </FloatingCard>
+        </motion.div>
         
-        <FloatingCard className="absolute bottom-40 left-[15%] hidden lg:block" delay={1.2}>
-          <div className="flex items-center gap-2 text-sm">
-            <Cpu className="h-4 w-4 text-secondary" />
-            <span className="text-muted-foreground">AI Processing...</span>
-          </div>
-        </FloatingCard>
+        <motion.div style={{ y: y3 }} className="absolute bottom-40 left-[15%] hidden lg:block">
+          <FloatingCard delay={1.2}>
+            <div className="flex items-center gap-2 text-sm">
+              <Cpu className="h-4 w-4 text-secondary" />
+              <span className="text-muted-foreground">AI Processing...</span>
+            </div>
+          </FloatingCard>
+        </motion.div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -151,16 +172,19 @@ export function HeroSection() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="glass-card rounded-2xl p-5 group cursor-default"
+                className="group"
               >
-                <div className="flex items-center justify-center mb-3">
-                  <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <stat.icon className="h-5 w-5 text-primary" />
+                <TiltCard degree={15} className="h-full">
+                  <div className="glass-card rounded-2xl p-5 group cursor-default h-full">
+                    <div className="flex items-center justify-center mb-3">
+                      <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                        <stat.icon className="h-5 w-5 text-primary" />
+                      </div>
+                    </div>
+                    <div className="text-2xl sm:text-3xl font-bold text-gradient mb-1">{stat.value}</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground">{stat.label}</div>
                   </div>
-                </div>
-                <div className="text-2xl sm:text-3xl font-bold text-gradient mb-1">{stat.value}</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">{stat.label}</div>
+                </TiltCard>
               </motion.div>
             ))}
           </motion.div>
