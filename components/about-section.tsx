@@ -113,7 +113,7 @@ export function AboutSection() {
 
                 <div className="relative glass-card rounded-2xl overflow-hidden aspect-[4/5] border border-white/10">
                   <Image
-                    src="/Areeb Profile.png"
+                    src="/Areeb Profile.webp"
                     alt="Areeb Malik"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"

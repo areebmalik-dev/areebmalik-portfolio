@@ -19,7 +19,7 @@ const screenshots = [
     description:
       "Modern marketplace platform with Firebase auth, Stripe payments, and Sanity-powered product management.",
     category: "Full Stack App",
-    image: "/gallery/marketplace-ecommerce.png",
+    image: "/projects/marketplace-ecommerce.webp",
     gradient: "from-emerald-500/30 via-cyan-500/20 to-teal-500/30",
   },
   {
@@ -28,7 +28,7 @@ const screenshots = [
     description:
       "AI-driven RAG platform with semantic search, Gemini AI, and vector database integration.",
     category: "AI Platform",
-    image: "/gallery/ai-rag-system.png",
+    image: "/projects/ai-rag-system.webp",
     gradient: "from-violet-500/30 via-fuchsia-500/20 to-purple-500/30",
   },
   {
@@ -37,7 +37,7 @@ const screenshots = [
     description:
       "Full-stack SaaS task manager with AI chatbot, JWT authentication, and Docker deployment.",
     category: "SaaS Application",
-    image: "/gallery/taskflow-pro.png",
+    image: "/projects/taskflow-pro.webp",
     gradient: "from-cyan-500/30 via-blue-500/20 to-indigo-500/30",
   },
   {
@@ -46,7 +46,7 @@ const screenshots = [
     description:
       "Interactive birthday app with balloons, ribbons, candle animations, and celebration effects.",
     category: "Interactive Web App",
-    image: "/gallery/birthday-app.png",
+    image: "/projects/birthday-app.webp",
     gradient: "from-pink-500/30 via-rose-500/20 to-purple-500/30",
   },
   {
@@ -55,7 +55,7 @@ const screenshots = [
     description:
       "Pixel-perfect responsive SaaS landing page developed from a professional Figma design.",
     category: "Frontend Development",
-    image: "/gallery/whitepace-saas.png",
+    image: "/projects/whitepace-saas.webp",
     gradient: "from-blue-500/30 via-indigo-500/20 to-sky-500/30",
   },
   {
@@ -64,7 +64,7 @@ const screenshots = [
     description:
       "Responsive frontend recreation of the Governor Sindh education program website.",
     category: "Frontend Clone",
-    image: "/gallery/governor-sindh-clone.png",
+    image: "/projects/governor-sindh-clone.webp",
     gradient: "from-sky-500/30 via-blue-500/20 to-indigo-500/30",
   },
   {
@@ -73,7 +73,7 @@ const screenshots = [
     description:
       "Dark-themed responsive blog platform UI prepared for future CMS and backend integration.",
     category: "Frontend Development",
-    image: "/gallery/blog-platform.png",
+    image: "/projects/blog-platform.webp",
     gradient: "from-red-500/30 via-orange-500/20 to-pink-500/30",
   },
   {
@@ -82,7 +82,7 @@ const screenshots = [
     description:
       "Customizable resume builder with dynamic editing and shareable resume functionality.",
     category: "Web App",
-    image: "/gallery/resume-builder.png",
+    image: "/projects/resume-builder.webp",
     gradient: "from-pink-500/30 via-rose-500/20 to-red-500/30",
   },
   {
@@ -91,7 +91,7 @@ const screenshots = [
     description:
       "Responsive currency converter with real-time exchange rate integration using REST APIs.",
     category: "Web App",
-    image: "/gallery/currency-converter.png",
+    image: "/projects/currency-converter.webp",
     gradient: "from-yellow-500/30 via-orange-500/20 to-amber-500/30",
   },
 ];

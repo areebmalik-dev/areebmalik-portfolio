@@ -28,7 +28,7 @@ const projects = [
     description:
       "A modern full-stack marketplace e-commerce platform built with Next.js 15, featuring secure Firebase authentication, Sanity-powered product management, Stripe payment integration, and a fully responsive shopping experience. Includes protected admin access, dynamic product management, and seamless frontend performance optimized for scalability.",
     category: "E-Commerce",
-    image: "/projects/marketplace-ecommerce.png",
+    image: "/projects/marketplace-ecommerce.webp",
     techStack: [
       "Next.js 15",
       "TypeScript",
@@ -50,7 +50,7 @@ const projects = [
     description:
       "A responsive real-time currency conversion application built with JavaScript and REST APIs, providing accurate live exchange rates, dynamic currency calculations, and a clean user-friendly interface optimized for speed and usability.",
     category: "Web App",
-    image: "/projects/currency-converter.png",
+    image: "/projects/currency-converter.webp",
     techStack: ["HTML5", "CSS3", "JavaScript", "REST API"],
     liveUrl: "https://currencyconvertor-nu.vercel.app/",
     githubUrl: "https://github.com/areebmalik-dev/currency_convertor",
@@ -62,7 +62,7 @@ const projects = [
     description:
       "A dynamic and customizable resume builder that allows users to edit resume sections in real time, personalize layouts, and generate shareable resume links through a clean and responsive user experience.",
     category: "Web App",
-    image: "/projects/resume-builder.png",
+    image: "/projects/resume-builder.webp",
     techStack: ["TypeScript", "HTML5", "CSS3"],
     liveUrl: "https://areebresume-milestone-5.vercel.app/",
     githubUrl: "https://github.com/areebmalik-dev/resume_milestone-5",
@@ -74,7 +74,7 @@ const projects = [
     description:
       "A full-stack AI-powered book creation and Retrieval-Augmented Generation (RAG) platform built with FastAPI, Google Gemini, Qdrant vector database, and Docusaurus. Features intelligent semantic search, AI-assisted content generation, real-time chatbot interactions with source citations, and a modern responsive documentation interface optimized for scalable knowledge delivery.",
     category: "AI Platform",
-    image: "/projects/ai-rag-system.png",
+    image: "/projects/ai-rag-system.webp",
     techStack: [
       "FastAPI",
       "Google Gemini",
@@ -95,7 +95,7 @@ const projects = [
     description:
       "A production-ready full-stack task management platform built with Next.js and FastAPI, featuring JWT authentication, AI-powered chatbot assistance, profile management, responsive dark/light themes, and Docker-based deployment architecture. Includes secure multi-user task management, OpenRouter AI integration with Mistral 7B, CI/CD workflows, and scalable backend infrastructure optimized for modern SaaS experiences.",
     category: "Full Stack SaaS",
-    image: "/projects/taskflow-pro.png",
+    image: "/projects/taskflow-pro.webp",
     techStack: [
       "Next.js 16",
       "React 19",
@@ -118,7 +118,7 @@ const projects = [
     description:
       "A modern interactive birthday celebration web application built with Next.js, featuring animated celebration effects, interactive candle lighting, balloon popping interactions, dynamic ribbons and confetti animations, and a responsive user experience designed to create personalized digital birthday moments.",
     category: "Interactive Web App",
-    image: "/projects/birthday-app.png",
+    image: "/projects/birthday-app.webp",
     techStack: [
       "Next.js",
       "React",
@@ -136,7 +136,7 @@ const projects = [
     description:
       "A modern fully responsive SaaS landing page built with Next.js and Tailwind CSS, developed from a detailed Figma design system with pixel-perfect responsiveness across desktop, tablet, and mobile devices. Focused on clean UI implementation, responsive layouts, scalable component structure, and modern SaaS-style user experience optimization.",
     category: "Frontend Development",
-    image: "/projects/whitepace-saas.png",
+    image: "/projects/whitepace-saas.webp",
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma"],
     liveUrl: "https://nextjs-class-assigment-05-whitepace-saas.vercel.app/",
     githubUrl:
@@ -149,7 +149,7 @@ const projects = [
     description:
       "A fully responsive frontend clone of the Governor Sindh Education Program website built with modern frontend technologies, focused on pixel-perfect UI recreation, responsive layouts across all devices, and clean component-based implementation following real-world design structure and frontend development best practices.",
     category: "Frontend Development",
-    image: "/projects/governor-sindh-clone.png",
+    image: "/projects/governor-sindh-clone.webp",
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     liveUrl: "https://assigment-02-governor-website-clone.vercel.app/",
     githubUrl:
@@ -162,7 +162,7 @@ const projects = [
     description:
       "A modern and fully responsive blog platform frontend built with Next.js, featuring a clean dark-themed UI, dynamic blog layout design, responsive content sections, and scalable architecture prepared for future backend and CMS integration. Designed to support automated blog publishing workflows and modern content-driven experiences.",
     category: "Frontend Development",
-    image: "/projects/blog-platform.png",
+    image: "/projects/blog-platform.webp",
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     liveUrl: "https://areeb-blog.vercel.app/",
     githubUrl: "https://github.com/areebmalik-dev/dynamic-blog",
